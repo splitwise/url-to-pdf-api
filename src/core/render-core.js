@@ -111,6 +111,9 @@ async function render(_opts = {}) {
       await page.emulateMedia('screen');
     }
 
+    logger.info('Disabling Javascript..');
+    await page.setJavaScriptEnabled(false);
+
     if (opts.cookies && opts.cookies.length > 0) {
       logger.info('Setting cookies..');
 
